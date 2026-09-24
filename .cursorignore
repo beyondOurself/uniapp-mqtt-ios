@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+dist
+unpackage
+*.log
+*.tmp
+*.local
+.idea
+.vscode
+*.iml
+/build/
+/__uniappview__/
+*.bak
+package-lock.json
