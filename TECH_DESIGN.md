@@ -69,10 +69,23 @@ uni.connectSocket = (function(connectSocket) {
 
 按需在入口 `import`；当前联调页主要依赖 dist 包 + connectSocket 补丁。
 
-### 4. 协议与 iOS 白名单
+### 4. 协议与 iOS URL Scheme 白名单（强制）
 
 - Broker URL 使用 **`wxs://`**（uni-app App WebSocket 约定）
-- `manifest.json` → `app-plus.distribute.ios.urlschemewhitelist`: `["ws", "wss"]`
+- **iOS 必须**在 `manifest.json` 放开 `ws` / `wss`，否则真机 WebSocket 建连会被系统拦截
+
+文件：`manifest.json` → `app-plus.distribute.ios`
+
+```json
+"ios" : {
+    "urlschemewhitelist" : [ "ws", "wss" ]
+}
+```
+
+- **路径**：`app-plus` → `distribute` → `ios` → `urlschemewhitelist`
+- **值**：必须含 `"ws"`、`"wss"`（与 `wxs://` 底层协议对应）
+- **生效**：改完须 **重新打包 / 自定义基座** 后再测 iOS；仅改源码热更新不够
+- **禁止**：删掉该字段或留空数组后再测「iOS MQTT 连不上」
 
 ### 5. 连接参数（样例）
 

@@ -20,7 +20,7 @@ uni-app + `mqtt.js` 在 Android App 上可连 Broker，但在 **iOS App（真机
 | 依赖版本 | 本样例锁定 **mqtt@3.0.0**（见 `package.json` / `yarn.lock`） |
 | App 关键补丁 | `main.js` 在 `#ifdef APP-PLUS` 下为 `uni.connectSocket` 补默认 `success`（与 `owner_uniapp` 同款） |
 | 引入方式 | 必须用 `mqtt/dist/mqtt.js`，勿用 Node 主入口 |
-| iOS 清单 | `manifest.json` → `app-plus.distribute.ios.urlschemewhitelist` 含 `ws` / `wss` |
+| iOS 清单 | `manifest.json` → `app-plus.distribute.ios.urlschemewhitelist: ["ws","wss"]`（改完须重打基座） |
 
 ## 四、风险与约束
 

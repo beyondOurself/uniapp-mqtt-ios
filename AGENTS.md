@@ -19,7 +19,7 @@
 - 依赖锁定 **mqtt@3.0.0**（`package.json` + `yarn.lock`），安装用 yarn
 - 保留 `main.js` 中 App 下 `uni.connectSocket` 的 `success` 补丁，禁止无说明删除
 - 业务引入统一 `mqtt/dist/mqtt.js`
-- Broker 用 `wxs://`；iOS `urlschemewhitelist` 含 `ws`/`wss`
+- Broker 用 `wxs://`；`manifest.json` → `app-plus.distribute.ios.urlschemewhitelist` 须为 `["ws","wss"]`，改完须重打 iOS 基座
 - 细节见 `TECH_DESIGN.md`「mqtt 安装版本」「兼容处理」
 
 ## UI 与 DESIGN.md（强制）

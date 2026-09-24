@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "mqtt": "3.0.0"
+    "mqtt": "4.1.0"
   }
 }

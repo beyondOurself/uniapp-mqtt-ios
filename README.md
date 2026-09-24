@@ -21,7 +21,7 @@
 
 1. **`main.js`（APP-PLUS）**：为 `uni.connectSocket` 补默认 `success`，避免 iOS App 下 mqtt.js 建连异常  
 2. **`utils/mqtt-browser-shim.js`**：webpack / process / `wx=uni` 垫片（按需）  
-3. **协议**：Broker 用 `wxs://`；`manifest.json` iOS `urlschemewhitelist` 含 `ws`、`wss`  
+3. **协议**：Broker 用 `wxs://`；`manifest.json` → `app-plus.distribute.ios.urlschemewhitelist` 须为 `["ws", "wss"]`（改完重打基座）
 
 完整说明见 [`TECH_DESIGN.md`](./TECH_DESIGN.md)。
 

@@ -4,6 +4,7 @@
 
 ## 2026-09-24
 
+- docs(mqtt): 文档补全 iOS `urlschemewhitelist: ["ws","wss"]`（`manifest.json`，改完须重打基座）
 - chore(init): 初始化 uni-app iOS MQTT 联调样例与 vibe-coding 文档
   - 范围：根目录文档、`.cursorignore`；依赖锁定 mqtt@3.0.0；删除过期 package-lock
   - 验收：文档写清 mqtt 版本与 connectSocket 等兼容处理；可推送到 `beyondOurself/uniapp-mqtt-ios`
